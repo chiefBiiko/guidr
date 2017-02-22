@@ -323,7 +323,7 @@ x[1,]  # Needs a space after the comma </span></pre>
             line within a 80 character window; In such cases the keyword
             (<code>if ()</code>, <code>function()</code> etc.) and its corresponding 
             block/statement should be on the same line without enclosing curly 
-            brackets. Such one-liners allow for short but readable conditional tests
+            braces. Such one-liners allow for short but readable conditional tests
             and anonymous functions. <code>if/else</code> and other more complex 
             multi-line constructs must always make use of curly braces.
           </p>
@@ -335,9 +335,9 @@ if (exists(ylim) && is.null(ylim)) {<br />
 <br />
 if (is.null(ylim)) ylim &lt;- c(0, 0.06)</pre>
           <p>
-            Do not surround the body of an one-liner with curly brackets. If a 
+            Do not surround the body of an one-liner with curly braces. If a 
             keyword and its block span multiple lines always make use of curly 
-            brackets. 
+            braces. 
           </p>
           <p>BAD: </p>
 <pre style="color:red">
@@ -356,7 +356,7 @@ else<br />
             a final else block whose only purpose is preventing fallthrough by 
             raising an error with <code>stop()</code> can be one the same line 
             as its <code>else</code> keyword but then must be surrounded with 
-            one space on both sides and curly brackets.
+            one space on both sides and curly braces.
           </p>
           <p>
             GOOD:<br />
