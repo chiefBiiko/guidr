@@ -270,15 +270,15 @@
             comma.
             <br /><br /> GOOD:
           </p>
-<pre>prior &lt;- table(df[df$days &lt; 0, 'id'])<br />
-total &lt;- sum(x[, 1])<br />
+<pre>prior &lt;- table(df[df$days &lt; 0, 'id'])
+total &lt;- sum(x[, 1])
 total &lt;- sum(x[1, ])</pre>
           <p>
             BAD:
           </p>
-<pre><span style="color:red">prior &lt;- table(df[df$days&lt;0, 'id'])  # Needs spaces around &lt;<br />
-prior &lt;- table(df[df$days &lt; 0,'id'])  # Needs a space after the ,<br />
-prior&lt;-table(df[df$days &lt; 0, 'id'])  # Needs spaces around &lt;-<br />
+<pre><span style="color:red">prior &lt;- table(df[df$days&lt;0, 'id'])  # Needs spaces around &lt;
+prior &lt;- table(df[df$days &lt; 0,'id'])  # Needs a space after the ,
+prior&lt;-table(df[df$days &lt; 0, 'id'])  # Needs spaces around &lt;-
 total &lt;- sum(x[ ,1])  # Needs a space AFTER the , - not before</span>
 </pre>
           <p>
@@ -296,11 +296,11 @@ total &lt;- sum(x[ ,1])  # Needs a space AFTER the , - not before</span>
             Extra spacing (i.e., more than one space in a row) is okay if it
             improves alignment of equals signs or arrows (<code>&lt;-</code>).
           </p>
-<pre>plot(x    = x.coord,<br />
-     y    = data.mat[, MakeColName(metric, ptiles[1], 'roiOpt')],<br />
-     ylim = ylim,<br />
-     xlab = 'dates',<br />
-     ylab = metric,<br />
+<pre>plot(x    = x.coord,
+     y    = data.mat[, MakeColName(metric, ptiles[1], 'roiOpt')],
+     ylim = ylim,
+     xlab = 'dates',
+     ylab = metric,
      main = (paste(metric, ' for 3 samples ', sep = '')))
 </pre>
           <p>
@@ -308,10 +308,10 @@ total &lt;- sum(x[ ,1])  # Needs a space AFTER the , - not before</span>
             <br /><em> Exception:  Always place a space after a comma.</em>
           </p>
           <p>
-            GOOD:</p><pre>if (debug)<br />
+            GOOD:</p><pre>if (debug)
 x[1, ]</pre>
           <p>
-            BAD:</p><pre><span style="color:red">if ( debug )  # No spaces around debug<br />
+            BAD:</p><pre><span style="color:red">if ( debug )  # No spaces around debug
 x[1,]  # Needs a space after the comma </span></pre>
 
           <h4 id="curlybraces">Curly Braces</h4>
@@ -329,10 +329,9 @@ x[1,]  # Needs a space after the comma </span></pre>
           </p>
           GOOD:
           <pre>
-if (exists(secret) && is.null(secret)) {<br />
-  secret &lt;- as.character('SAKAWASAFESECRETSOSUSUSTAYSPINNING')<br />
+if (exists(secret) && is.null(secret)) {
+  secret &lt;- as.character('SAKAWASAFESECRETSOSUSUSTAYSPINNING')
 }
-<br />
 if (is.null(ylim)) ylim &lt;- c(0, 0.06)</pre>
           <p>
             Do not surround the body of an one-liner with curly braces. If a 
@@ -341,11 +340,11 @@ if (is.null(ylim)) ylim &lt;- c(0, 0.06)</pre>
           </p>
           <p>BAD: </p>
 <pre style="color:red">
-if (is.null(ylim)) {ylim &lt;- c(0, 0.06)} <br/>
-if (condition)<br />
-  one line<br />
-else<br />
-  one line<br />
+if (is.null(ylim)) {ylim &lt;- c(0, 0.06)}
+if (condition)
+  one line
+else
+  one line
 </pre>
 
           <h4 id="else">Surround else with braces</h4>
@@ -361,21 +360,21 @@ else<br />
           <p>
             GOOD:<br />
           </p>
-          <pre>if (condition) {<br />
-  # one or more lines<br />
-} else if (condition) {<br />
-  # one or more lines<br />
+          <pre>if (condition) {
+  # one or more lines
+} else if (condition) {
+  # one or more lines
 } else { stop('error') }
 </pre>
           <p>
             BAD:<br />
           </p>
           <pre style="color:red">
-if (condition) {<br />
-  # one or more lines<br />
-}<br />
-else {<br />
-  # one or more lines<br />
+if (condition) {
+  # one or more lines
+}
+else {
+  # one or more lines
 }
 </pre>
 
@@ -429,11 +428,11 @@ else {<br />
             Short comments can be placed after code preceded by two spaces,
             <code>#</code>, and then one space.
           </p>
-<pre># Create histogram of frequency of campaigns by pct budget spent.<br />
-hist(df$pct.spent,<br />
-     breaks = 'scott',  # method for choosing number of buckets<br />
-     main   = 'Histogram: fraction budget spent by campaignid',<br />
-     xlab   = 'Fraction of budget spent',<br />
+<pre># Create histogram of frequency of campaigns by pct budget spent.
+hist(df$pct.spent,
+     breaks = 'scott',  # method for choosing number of buckets
+     main   = 'Histogram: fraction budget spent by campaignid',
+     xlab   = 'Fraction of budget spent',
      ylab   = 'Frequency (count of campaignids)')
 </pre>
         <h4 id="functiondefinition">Function Definitions and
@@ -464,11 +463,11 @@ hist(df$pct.spent,<br />
             between assignments.
           </p>
           <p>GOOD:
-<pre>predictCTR &lt;- function(query, property, num.days,<br />
+<pre>predictCTR &lt;- function(query, property, num.days,
                        show.plot=T)
 </pre>
            BAD:
-<pre><span style="color:red">predictCTR &lt;- function(query, property, num.days, show.plot =<br />
+<pre><span style="color:red">predictCTR &lt;- function(query, property, num.days, show.plot =
                        TRUE)
 </span></pre>
           <p> 
@@ -494,26 +493,26 @@ hist(df$pct.spent,<br />
 
         <h4 id="examplefunction">Example Function</h4>
 <pre>
-calculateSampleCovariance &lt;- function(x, y, verbose=T) {<br />
-  # Computes the sample covariance between two vectors.<br />
-  # @param {numeric} x Numeric vector<br />
-  # @param {numeric} y Must have the same length as x (> 1) <br />
-  # @param {bool} verbose If T, prints sample covariance<br />
-  # @return {numeric} The sample covariance between x and y<br />
-  n &lt;- length(x)<br />
-  # Error handling<br />
-  if (n &lt;= 1 || n != length(y)) {<br />
-    stop('Arguments x and y have different lengths: ',<br />
-         length(x), ' and ', length(y), '.')<br />
-  }<br />
-  if (TRUE %in% is.na(x) || TRUE %in% is.na(y)) {<br />
-    stop(' Arguments x and y must not have missing values.')<br />
-  }<br />
-  covariance &lt;- var(x, y)<br />
-  if (verbose) {<br />
-    cat('Covariance = ', round(covariance, 4), '.\n', sep = '')<br />
-  } <br />
-  return(covariance)<br />
+calculateSampleCovariance &lt;- function(x, y, verbose=T) {
+  # Computes the sample covariance between two vectors.
+  # @param {numeric} x Numeric vector
+  # @param {numeric} y Must have the same length as x (> 1)
+  # @param {bool} verbose If T, prints sample covariance
+  # @return {numeric} The sample covariance between x and y
+  n &lt;- length(x)
+  # Error handling
+  if (n &lt;= 1 || n != length(y)) {
+    stop('Arguments x and y have different lengths: ',
+         length(x), ' and ', length(y), '.')
+  }
+  if (TRUE %in% is.na(x) || TRUE %in% is.na(y)) {
+    stop(' Arguments x and y must not have missing values.')
+  }
+  covariance &lt;- var(x, y)
+  if (verbose) {
+    cat('Covariance = ', round(covariance, 4), '.\n', sep = '')
+  }
+  return(covariance)
 }
 </pre>
 

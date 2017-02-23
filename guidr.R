@@ -13,11 +13,12 @@ guidr <- function(pull=F) {
     dir.create(file.path(.libPaths()[1], 'guidr'))
   }
   if (!file.exists(GUIDR) || pull) {
-    download.file('https://github.com/chiefBiiko/guidr/raw/master/guidr.html', GUIDR)
+    dlcd <- download.file('https://github.com/chiefBiiko/guidr/raw/master/guidr.html', GUIDR)
+    if (dlcd != 0) stop('Download error.')
   }
   dir.create(temp.dir <- tempfile())
-  temp.html <- file.path(temp.dir, "guidr.html")
-  writeLines(paste0(readLines(GUIDR, warn=F), collapse=''), temp.html)
+  cpcd <- file.copy(GUIDR, temp.html <- file.path(temp.dir, "guidr.html"))
+  if (!cpcd) stop('File system error: Could\'nt copy HTML file 2 temp dir.')
   rstudioapi::viewer(temp.html, height=-1)
   message('(-*c*):: If u prefer a big window click "Zoom" in the viewer pane!')
 }
