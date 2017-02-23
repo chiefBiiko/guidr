@@ -329,8 +329,8 @@ x[1,]  # Needs a space after the comma </span></pre>
           </p>
           GOOD:
           <pre>
-if (exists(ylim) && is.null(ylim)) {<br />
-  ylim &lt;- c(0, 0.06, 0.12, 0.18, 0.24, 0.30, 0.36)<br />
+if (exists(secret) && is.null(secret)) {<br />
+  secret &lt;- as.character('SAKAWASAFESECRETSOSUSUSTAYSPINNING')<br />
 }
 <br />
 if (is.null(ylim)) ylim &lt;- c(0, 0.06)</pre>
@@ -472,7 +472,12 @@ hist(df$pct.spent,<br />
                        TRUE)
 </span></pre>
           <p> 
-            Avoid creating unnecessary objects and embrace a more functional style.
+            Do not create an object if its existence is not absolutely necessary.
+            Having a multitude of name bindings within an environement or function 
+            can decrease the readability of code drastically. As long as there is 
+            clarity about a function's inputs and outputs embeeding a literal 
+            function within code is more readable than creating a name binding
+            for its return value.
             Ideally, unit tests should serve as sample function calls (for
             shared library routines).
           </p>
