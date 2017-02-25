@@ -174,10 +174,10 @@
       <li><a href="guidr.html#linelength">Line Length</a>: try respecting a maximum of 80 characters</li>
       <li><a href="guidr.html#indentation">Indentation</a>: two spaces, no tabs</li>
       <li><a href="guidr.html#spacing">Spacing</a></li>
-      <li><b>Strings</b>: prefer single quotes <code>'Sakawa'</code> - double quotes only when nesting strings</li>
+      <li><b>Strings</b>: single quotes - double quotes only when nesting strings</li>
       <li><a href="guidr.html#curlybraces">Curly Braces</a>: first on same line, last on
         own line</li>
-      <li><a href="guidr.html#else">else</a>: Surround else with braces </li>
+      <li><a href="guidr.html#else">else</a>: surround else with braces </li>
       <li><a href="guidr.html#assignment">Assignment</a>: use <code>&lt;-</code>, not
         <code>=</code></li>
       <li><a href="guidr.html#semicolons">Semicolons</a>: don't use them</li>
@@ -453,7 +453,7 @@ hist(df$pct.spent,
             of the scope of the current function; instead one should create a new 
             object with the specified features within a function and return that.
             Functions should have explicit return values denoted by 
-            <code>return(value)</code>. However, anonymous one-liner functions 
+            <code>return(value)</code>. However, one-liner functions (anonymous and named)
             with a single statement body should be returned implicit 
             (i.e. <code>function(a, b) paste0(a, b)</code>). 
           </p>
