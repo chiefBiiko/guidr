@@ -161,7 +161,7 @@
       R is a high-level programming language used primarily for
       statistical computing and graphics. The goal of the R
       Programming Style Guide is to make our R code easier to read,
-      share, and verify. The rules below ground on <a href="https://google.github.io/styleguide/Rguide.xml">Google's R Style Guide</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>) authored by <a href="https://github.com/wieczorek1990">@wieczorek1990</a> and <a href="https://github.com/herrjemand">@herrjemand</a>. The Chief R Style Guide incorporates modifications (sections 1, 2, 6, 7, 8, 13, 14, 15, 16) by <a href="https://github.com/chiefBiiko">@chiefBiiko</a>.
+      share, and verify. The rules below ground on <a href="https://google.github.io/styleguide/Rguide.xml">Google's R Style Guide</a> (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>) authored by <a href="https://github.com/wieczorek1990">@wieczorek1990</a> and <a href="https://github.com/herrjemand">@herrjemand</a>. The Chief R Style Guide incorporates modifications of all sections by <a href="https://github.com/chiefBiiko">@chiefBiiko</a>.
     </p>
 
     <h2>Summary: R Style Rules</h2>
@@ -324,18 +324,19 @@ x[1,]  # Needs a space after the comma </span></pre>
             (<code>if ()</code>, <code>function()</code> etc.) and its corresponding 
             block/statement should be on the same line without enclosing curly 
             braces. Such one-liners allow for short but readable conditional tests
-            and anonymous functions. <code>if/else</code> and other more complex 
-            multi-line constructs must always make use of curly braces.
+            and anonymous functions. Complex <code>if/else</code> constructs must
+            always make use of curly braces.
           </p>
           GOOD:
           <pre>
 if (exists(secret) && is.null(secret)) {
   secret &lt;- as.character('SAKAWASAFESECRETSOSUSUSTAYSPINNING')
 }
+if (x &lt; 0) 'minus' else 'plus'
 if (is.null(ylim)) ylim &lt;- c(0, 0.06)</pre>
           <p>
             Do not surround the body of an one-liner with curly braces. If a 
-            keyword and its block span multiple lines always make use of curly 
+            block contains multiple statements always make use of curly 
             braces. 
           </p>
           <p>BAD: </p>
