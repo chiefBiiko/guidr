@@ -429,12 +429,9 @@ else {
             Short comments can be placed after code preceded by two spaces,
             <code>#</code>, and then one space.
           </p>
-<pre># Create histogram of frequency of campaigns by pct budget spent.
-hist(df$pct.spent,
-     breaks = 'scott',  # method for choosing number of buckets
-     main   = 'Histogram: fraction budget spent by campaignid',
-     xlab   = 'Fraction of budget spent',
-     ylab   = 'Frequency (count of campaignids)')
+<pre># Easy string concatenation
+'%+%' &lt;- function(a, b) UseMethod('%+%')  # Generic concat operator
+'%+%.character' &lt;- function(a, b) paste0(a, b)  # String concat operator
 </pre>
         <h4 id="functiondefinition">Function Definitions and
           Calls</h4>

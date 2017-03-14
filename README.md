@@ -13,4 +13,4 @@ guidr()
 
 Based on [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml) ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) authored by [@wieczorek1990](https://github.com/wieczorek1990) and [@herrjemand](https://github.com/herrjemand).
 
-The Chief R Style Guide incorporates modifications (sections 1, 2, 6, 7, 8, 13, 14, 15, 16) by @chiefBiiko.
+The Chief R Style Guide incorporates modifications of all sections by @chiefBiiko.
