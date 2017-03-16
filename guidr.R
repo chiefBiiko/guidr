@@ -19,6 +19,6 @@ guidr <- function(pull=F) {
   dir.create(temp.dir <- tempfile())
   cpcd <- file.copy(GUIDR, temp.html <- file.path(temp.dir, "guidr.html"))
   if (!cpcd) stop('File system error: Could\'nt copy HTML file 2 temp dir.')
-  rstudioapi::viewer(temp.html, height=-1)
+  rstudioapi::viewer(temp.html, height=-1L)
   message('(-*c*):: If u prefer a big window click "Zoom" in the viewer pane!')
 }
