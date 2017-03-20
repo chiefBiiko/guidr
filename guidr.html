@@ -170,7 +170,8 @@
       <li><a href="guidr.html#filenames">File Names</a>: lowercase, their separator is <code>_</code> ending with <code>.R</code> or <code>.Rmd</code> </li>
       <li><a href="guidr.html#identifiers">Identifiers</a>: <code>variable</code>,
         <code>functionName</code>,
-        <code>CONSTANT</code></li>
+        <code>CONSTANT</code>,
+        <code>GLOBAL</code></li>
       <li><a href="guidr.html#linelength">Line Length</a>: try respecting a maximum of 80 characters</li>
       <li><a href="guidr.html#indentation">Indentation</a>: two spaces, no tabs</li>
       <li><a href="guidr.html#spacing">Spacing</a></li>
@@ -222,7 +223,7 @@
             with only a single underscore as separator or just all lowercase 
             with a verb as name that explicitely marks it as a function 
             (<code>functionName</code> or <code>func_name</code> or <code>verb</code>);
-            constants are named all uppercase and with an <code>_</code> as
+            constants and globals are named all uppercase and with an <code>_</code> as
             separator.
           </p>
           <ul>
@@ -238,7 +239,7 @@
               <br /> Make function names verbs.
               <br /><em>Exception: When creating a classed object, the function
                 name (constructor) and class should match  (e.g., lm).</em></li>
-            <li><code>CONSTANT</code> or <code>CONSTANT_NAME</code></li>
+            <li><code>CONSTANT, GLOBAL</code> or <code>CONSTANT_NAME, GLOBAL_NAME</code></li>
           </ul>
 
 
@@ -458,13 +459,14 @@ else {
           <p>
             In both function definitions and function calls, multiple
             arguments per line are allowed; line breaks are only allowed
-            between assignments. Default argument values can be expressions.
+            between assignments. Default argument values can be expressions and statements.
           </p>
           <p>GOOD:
 <pre>predictCTR &lt;- function(query, property, num.days,
                        show.plot=T)
 push &lt;- function(code=NULL,
-                 file=grepl('\\.r$', code, ignore.case=T))
+                 file=grepl('\\.r$', code, ignore.case=T),
+                 mode=as.integer(file) + 1)
 </pre>
            BAD:
 <pre><span style="color:red">predictCTR &lt;- function(query, property, num.days, show.plot =
